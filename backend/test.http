@@ -1,0 +1,41 @@
+@baseUrl = http://localhost:3010
+
+### 반 상세 (200)
+GET {{baseUrl}}/api/classes/ai
+
+### 없는 반 (404)
+GET {{baseUrl}}/api/classes/unknown
+
+### AI 질문 (200, .env에 실제 API 키 필요)
+POST {{baseUrl}}/api/guide/ask
+Content-Type: application/json
+
+{"classId":"ai","question":"이 반에서는 어떤 프로젝트를 하나요?"}
+
+### 빈 질문 (400)
+POST {{baseUrl}}/api/guide/ask
+Content-Type: application/json
+
+{"classId":"ai","question":" "}
+
+### 세명 한 컷 (200, 실제 API 키 필요)
+# 실행 전 아래 ./photo.jpg를 테스트할 사진 경로로 바꾸세요.
+POST {{baseUrl}}/api/oneshot
+Content-Type: multipart/form-data; boundary=semyung-boundary
+
+--semyung-boundary
+Content-Disposition: form-data; name="description"
+
+친구들과 함께 만든 첫 번째 AI 프로젝트 발표!
+--semyung-boundary
+Content-Disposition: form-data; name="photo"; filename="photo.jpg"
+Content-Type: image/jpeg
+
+< ./photo.jpg
+--semyung-boundary--
+
+### 사진 누락 (400)
+POST {{baseUrl}}/api/oneshot
+Content-Type: application/json
+
+{"description":"오늘의 프로젝트 발표"}

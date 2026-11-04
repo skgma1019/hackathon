@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ai",
+    "name": "AI반",
+    "description": "인공지능의 기초와 머신러닝을 배우고, 생성형 AI를 활용하여 생활 속 문제를 해결하는 프로젝트를 만드는 반입니다.",
+    "model": "gemini-3.5-flash"
+  },
+  {
+    "id": "game",
+    "name": "게임개발반",
+    "description": "게임 기획, 캐릭터와 스테이지 설계, 프로그래밍의 기초를 배우고 직접 플레이할 수 있는 게임을 만드는 반입니다.",
+    "model": "gemini-3.5-flash"
+  },
+  {
+    "id": "web",
+    "name": "웹개발반",
+    "description": "HTML, CSS, JavaScript와 서버 및 API의 기초를 배우고 사용자에게 필요한 웹 서비스를 만드는 반입니다.",
+    "model": "gemini-3.5-flash"
+  }
+]
